@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="KeyboardChampion.Controls.Keyboard " Loaded="UserControl_Loaded"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:KeyboardChampion.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="400">
+    <Grid x:Name="Keyboards" Background="LightGray" KeyDown="Grid_KeyDown">
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+         <local:KeyShape x:Name="KeyQ" Grid.Column="0" Grid.Row="0" Letter="Q"></local:KeyShape>
+        <local:KeyShape Grid.Column="1" Letter="W"></local:KeyShape>
+        <local:KeyShape Grid.Column="2" Letter="E"></local:KeyShape>
+        <local:KeyShape Grid.Column="3" Grid.Row="0" Letter="R"></local:KeyShape>   
+        <local:KeyShape Grid.Column="4" Grid.Row="0" Letter="T"></local:KeyShape>
+        <local:KeyShape Grid.Column="5" Grid.Row="0" Letter="Y"></local:KeyShape>
+        <local:KeyShape Grid.Column="6" Grid.Row="0" Letter="U"></local:KeyShape>
+        <local:KeyShape Grid.Column="7" Grid.Row="0" Letter="I"></local:KeyShape>
+        <local:KeyShape Grid.Column="8" Grid.Row="0" Letter="O"></local:KeyShape>
+        <local:KeyShape Grid.Column="9" Grid.Row="0" Letter="P"></local:KeyShape>
+        <local:KeyShape Grid.Column="0" Grid.Row="1"  Letter="A"></local:KeyShape>
+        <local:KeyShape Grid.Column="1" Grid.Row="1"  Letter="S"></local:KeyShape>
+        <local:KeyShape Grid.Column="2" Grid.Row="1"  Letter="D"></local:KeyShape>
+        <local:KeyShape Grid.Column="3" Grid.Row="1"  Letter="F"></local:KeyShape>
+        <local:KeyShape Grid.Column="4" Grid.Row="1"  Letter="G"></local:KeyShape>
+        <local:KeyShape Grid.Column="5" Grid.Row="1"  Letter="H"></local:KeyShape>
+        <local:KeyShape Grid.Column="6" Grid.Row="1"  Letter="J"></local:KeyShape>
+        <local:KeyShape Grid.Column="7" Grid.Row="1"  Letter="K"></local:KeyShape>
+        <local:KeyShape Grid.Column="8" Grid.Row="1"  Letter="L"></local:KeyShape>
+        <local:KeyShape Grid.Column="1" Grid.Row="2"  Letter="Z"></local:KeyShape>
+        <local:KeyShape Grid.Column="2" Grid.Row="2"  Letter="X"></local:KeyShape>
+        <local:KeyShape Grid.Column="3" Grid.Row="2"  Letter="C"></local:KeyShape>
+        <local:KeyShape Grid.Column="4" Grid.Row="2"  Letter="V"></local:KeyShape>
+        <local:KeyShape Grid.Column="5" Grid.Row="2"  Letter="B"></local:KeyShape>
+        <local:KeyShape Grid.Column="6" Grid.Row="2"  Letter="N"></local:KeyShape>
+        <local:KeyShape Grid.Column="7" Grid.Row="2"  Letter="M"></local:KeyShape>
+        <local:KeyShape Grid.Column="2" Grid.ColumnSpan="5" Grid.Row="3"  Letter="" Margin="1 1 1 3"></local:KeyShape>
+
+    </Grid>
+</UserControl>
