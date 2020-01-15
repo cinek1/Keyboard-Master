@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using KeyboardChampion.Model;
+using KeyboardChampion.Utils;
 
 
 namespace KeyboardChampion.ViewModel
@@ -233,21 +234,24 @@ namespace KeyboardChampion.ViewModel
 
         public void GenerateLines()
         {
-            var mode = new SetGenerateMode(); 
-            mode.SetStrategyChooseLetters(new )
-
+            var mode = new SetGenerateMode();
+            if (mode.SetStrategyChooseLetters(new GenerateRandomLines(), toGenerateString))
+            {
+                var lines = mode.GetLines();
+                
+                    FirstLine = lines[0];
+                    SecondLine = lines[1];
+                    ThirdLine = lines[2];
+                FirstLineFromKey = generateSpace();
+                SecondLineFromKey = generateSpace();
+                ThirdLineFromKey = generateSpace();
+            } 
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             counter++;
             Time = counter.ToString();
-        }
-        public static string RandomString(int length)
-        {
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            return new string(Enumerable.Repeat(chars, length)
-              .Select(s => s[random.Next(s.Length)]).ToArray());
         }
         private string generateSpace()
         {
@@ -260,9 +264,7 @@ namespace KeyboardChampion.ViewModel
         {
             textToPractice = new TextToPractice()
             {
-                FirstLine = RandomString(80),
-                SecondLine = RandomString(80),
-                ThirdLine = RandomString(80),
+
                 FirstLineFromKey = generateSpace(),
                 SecondLineFromKey = generateSpace(),
                 ThirdLineFromKey = generateSpace(),

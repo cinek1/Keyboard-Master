@@ -29,11 +29,13 @@ namespace KeyboardChampion.Controls
         private void RandomLines_Click(object sender, RoutedEventArgs e)
         {
             App.State = AppState.RandomTrybe; 
+
         }
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            App.State = AppState.Practice; 
+            App.State = AppState.Practice;
+            App.AppDataContext.GenerateLines(); 
         }
     }
 }
