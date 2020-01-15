@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:KeyboardChampion.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="100" d:DesignWidth="400">
-    <Grid x:Name="Keyboards" Background="LightGray" KeyDown="Grid_KeyDown">
+    <Grid x:Name="Keyboards" Background="#2c2c2c" KeyDown="Grid_KeyDown">
         <Grid.ColumnDefinitions >
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />

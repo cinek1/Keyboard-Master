@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,12 +13,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Shapes;
-using System.Windows.Media.Animation;
-using System.Windows.Media;
+using KeyboardChampion.Model;
+using KeyboardChampion.ViewModel;
+
 namespace KeyboardChampion
 {
     /// <summary>
@@ -28,13 +26,9 @@ namespace KeyboardChampion
         public MainWindow()
         {
             InitializeComponent();
- 
         }
     }
 
 
 
-
-    
-    
 }

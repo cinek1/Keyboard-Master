@@ -9,18 +9,26 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="6*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <localUI:Keyboard Grid.Row="1"> </localUI:Keyboard>
         <Grid Grid.Column="0" Grid.Row="0">
-   
-
-            <localUI:ScreenToText Grid.Column="1" Grid.Row="1"> </localUI:ScreenToText>
+            <localUI:ScreenToText Grid.Column="1" Grid.Row="1"></localUI:ScreenToText>
         </Grid>
+        <Grid Grid.Column="0" Grid.Row="1">
+            <localUI:Keyboard> </localUI:Keyboard>
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="1">
+            
+            <localUI:MenuPartPractice> </localUI:MenuPartPractice>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <localUI:UserMenu> </localUI:UserMenu>
+        </Grid>
+
     </Grid>
 </Window>
