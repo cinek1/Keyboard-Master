@@ -26,7 +26,7 @@ namespace KeyboardChampion.Controls
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             var window = Window.GetWindow(this);
-            window.KeyDown += Grid_KeyDown;
+           window.SizeChanged += UserControl_SizeChanged; 
         }
         private int iter = 0;   
         public ScreenToText()
@@ -35,13 +35,13 @@ namespace KeyboardChampion.Controls
             this.DataContext = App.AppDataContext;
         }
 
-        private void Grid_KeyDown(object sender, KeyEventArgs e)
+        private void UserControl_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-           // LineOneText.Inlines.Clear();
-           // LineOneText.Inlines.Add(new Run(App.AppDataContext.ReturnPartOne()));
-          //  LineOneText.Inlines.Add(new Run(App.AppDataContext.ReturnPartTwo()) { Foreground = Brushes.Blue });
-        //    LineOneText.Inlines.Add(new Run(App.AppDataContext.ReturnPartThird()));
+
         }
 
+        private void UserControl_SizeChanged_1(object sender, SizeChangedEventArgs e)
+        {
+        }
     }
 }

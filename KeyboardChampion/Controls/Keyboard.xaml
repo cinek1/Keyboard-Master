@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:KeyboardChampion.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="100" d:DesignWidth="400">
-    <Grid x:Name="Keyboards" Background="#2c2c2c" KeyDown="Grid_KeyDown">
+    <Grid x:Name="Keyboards" Background="LightGray" KeyDown="Grid_KeyDown">
         <Grid.ColumnDefinitions >
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
@@ -51,7 +51,7 @@
         <local:KeyShape Grid.Column="5" Grid.Row="2"  Letter="B"></local:KeyShape>
         <local:KeyShape Grid.Column="6" Grid.Row="2"  Letter="N"></local:KeyShape>
         <local:KeyShape Grid.Column="7" Grid.Row="2"  Letter="M"></local:KeyShape>
-        <local:KeyShape Grid.Column="2" Grid.ColumnSpan="5" Grid.Row="3"  Letter="" Margin="1 1 1 3"></local:KeyShape>
+        <local:KeyShape Grid.Column="2" Grid.ColumnSpan="5" Grid.Row="3"   Margin="1 1 1 3" Letter=" "></local:KeyShape>
 
     </Grid>
 </UserControl>

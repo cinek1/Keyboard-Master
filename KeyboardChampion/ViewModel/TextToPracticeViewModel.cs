@@ -5,133 +5,51 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using KeyboardChampion.Model;
-using KeyboardChampion.Utils;
+using KeyboardChampion.Interfaces;
 
+using System.IO;
+using Microsoft.Win32;
+using System.Threading;
 
 namespace KeyboardChampion.ViewModel
 {
-    public class MyViewModel : INotifyPropertyChanged
+    public partial class MyViewModel : INotifyPropertyChanged
     {
-        private int countLettersFromKeyboard = 0; 
-        public string nextLetter { get; set; }
-        public string toGenerateString { set; get; } 
-        public SetGenerateMode generateMode { set; get;  }
+
+        public string NextLetter { get; set; }
+        public string PathToFile { get; set; }
+        public string ToGenerateString { set; get; } 
+        public SetGenerateMode GenerateMode { set; get;  }
+
+        private int countLettersFromKeyboard = 0;
         private string allText; 
-        private TextToPractice textToPractice;
-        private Statistics statistics;
-        private int mistake; 
 
-        public string FirstLine
-        {
-            get { return textToPractice.FirstLine; }
-            set
-            {
-                if (textToPractice.FirstLine != value)
-                {
-                    textToPractice.FirstLine = value;
-                    OnPropertyChange("FirstLine");
-                }
-            }
-        }
-        public string SecondLine
-        {
-            get { return textToPractice.SecondLine; }
-            set
-            {
-                if (textToPractice.SecondLine != value)
-                {
-                    textToPractice.SecondLine = value;
-                    OnPropertyChange("SecondLine");
+        private int mistake;
+        private static Random random = new Random();
+        private System.Windows.Forms.Timer timer1;
+        private int counter = 0;
 
-                }
-            }
-        }
-        public string ThirdLine
-        {
-            get { return textToPractice.ThirdLine; }
-            set
-            {
-                if (textToPractice.ThirdLine != value)
-                {
-                    textToPractice.ThirdLine = value;
-                    OnPropertyChange("ThirdLine");
-                }
-            }
-        }
 
-        public string FirstLineFromKey
+        public void clear()
         {
-            get { return textToPractice.FirstLineFromKey; }
-            set
-            {
-                if (textToPractice.FirstLineFromKey != value)
-                {
-                    textToPractice.FirstLineFromKey = value;
-                    OnPropertyChange("FirstLineFromKey");
-                }
-            }
-        }
-        public string SecondLineFromKey
-        {
-            get { return textToPractice.SecondLineFromKey; }
-            set
-            {
-                if (textToPractice.SecondLineFromKey != value)
-                {
-                    textToPractice.SecondLineFromKey = value;
-                    OnPropertyChange("SecondLineFromKey");
-
-                }
-            }
-        }
-        public string ThirdLineFromKey
-        {
-            get { return textToPractice.ThirdLineFromKey; }
-            set
-            {
-                if (textToPractice.ThirdLineFromKey != value)
-                {
-
-                    textToPractice.ThirdLineFromKey = value;
-                    OnPropertyChange("ThirdLineFromKey");
-                }
-            }
-        }
-        public string Mistakes
-        {
-            get { return statistics.Mistakes; }
-            set
-            {
-                if (statistics.Mistakes != value)
-                {
-                    statistics.Mistakes = value;
-                    OnPropertyChange("Mistakes");
-                }
-            }
-        }
-        public string Letters
-        {
-            get { return statistics.Letters; }
-            set
-            {
-                if (statistics.Letters != value)
-                {
-                    statistics.Letters = value;
-                    OnPropertyChange("Letters");
-                }
-            }
-        }
-        public string Time
-        {
-            get { return statistics.Time; }
-            set
-            {
-                if (statistics.Time != value)
-                {
-                    statistics.Time = value;
-                    OnPropertyChange("Time");
-                }
-            }
+            safeData();
+            NextLetter = "";
+            ToGenerateString = "";
+            allText = "";
+            Mistakes = "0";
+            Letters = "0";
+            Time = "0"; 
+            FirstLine = "";
+            SecondLine = "";
+            ThirdLine = "";
+            PathToFile = ""; 
+            counter = 0;
+            countLettersFromKeyboard = 0;
+            mistake = 0;
+            FirstLineFromKey = generateSpace();
+            SecondLineFromKey = generateSpace();
+            ThirdLineFromKey = generateSpace();
+            timer1.Interval = 100000000; 
         }
 
 
@@ -143,7 +61,7 @@ namespace KeyboardChampion.ViewModel
                 StringBuilder buildToLine = new StringBuilder(FirstLineFromKey);
                 buildToLine[countLettersFromKeyboard] = char.Parse(letter);
                 countLettersFromKeyboard++;
-                buildToLine.Remove(buildToLine.Length - 1, 1);
+                 buildToLine.Remove(buildToLine.Length - 1, 1);
                 FirstLineFromKey = buildToLine.ToString();
               
             }
@@ -163,66 +81,38 @@ namespace KeyboardChampion.ViewModel
                 buildToLine.Remove(buildToLine.Length - 1, 1);
                 ThirdLineFromKey = buildToLine.ToString();
             }
-            Letters = countLettersFromKeyboard.ToString(); 
-            nextLetter = allText[countLettersFromKeyboard].ToString();
-            if (allText[countLettersFromKeyboard - 1].ToString() == letter) return true;
-            mistake++;
-            Mistakes = mistake.ToString(); 
-            return false; 
+            Letters = countLettersFromKeyboard.ToString();
+            try
+            {
+                NextLetter = allText[countLettersFromKeyboard].ToString();
+                if (allText[countLettersFromKeyboard - 1].ToString() == letter) return true;
+                mistake++;
+                Mistakes = mistake.ToString();
+                return false;
+            }
+            catch (System.IndexOutOfRangeException)
+            {
+                clear(); 
+                App.State = AppState.ChosseTrybe; 
+                return false;
+            }
+
         }
 
-        //public string ReturnPartOne()
-        //{
-        //    if (countLettersFromKeyboard < 80)
-        //    {
-        //        return FirstLine.Substring(0, countLettersFromKeyboard + 1);
-        //    }
-        //    else if (countLettersFromKeyboard >= 80 && countLettersFromKeyboard < 160)
-        //    {
-        //        return SecondLine.Substring(0, countLettersFromKeyboard + 1);
-        //    }
-        //    else
-        //    {
-        //        return ThirdLine.Substring(0, countLettersFromKeyboard + 1);
-        //    }
+        private void safeData()
+        {
+            var stat = statistics; 
+            DataToSerializeBuilder dataToSerialize = new DataToSerializeBuilder();
+            var dataToAdd = dataToSerialize.SetLettersNumber(ToGenerateString)
+                           .SetStatiscs(statistics)
+                           .SetSpeedWrite()
+                           .SetPathToFile("")
+                           .ReturnDataFromThis();
+            App.DataToSerialaizes.Add(dataToAdd);
+            
+            
+        }
 
-        //}
-        //public string ReturnPartTwo()
-        //{
-        //    if (countLettersFromKeyboard < 79)
-        //    {
-        //        return FirstLine[countLettersFromKeyboard + 1].ToString();
-        //    }
-        
-        //    else if (countLettersFromKeyboard >= 79 && countLettersFromKeyboard < 160)
-        //    {
-        //        return SecondLine[countLettersFromKeyboard % 79 + 1].ToString();
-        //    }
-        //    else
-        //    {
-        //        return ThirdLine[countLettersFromKeyboard % 160 + 1].ToString();
-        //    }
-        //}
-
-        //public string ReturnPartThird()
-        //{
-        //    if (countLettersFromKeyboard < 79)
-        //    {
-        //        return FirstLine.Substring(countLettersFromKeyboard + 2, FirstLine.Length - countLettersFromKeyboard - 2);
-        //    }
-
-        //    else if (countLettersFromKeyboard >= 79 && countLettersFromKeyboard < 160)
-        //    {
-        //        return SecondLine.Substring((countLettersFromKeyboard + 2) % 79, FirstLine.Length - (countLettersFromKeyboard + 2) % 79 - 2);
-        //    }
-        //    else
-        //    {
-        //        return ThirdLine.Substring(countLettersFromKeyboard + 2, FirstLine.Length - countLettersFromKeyboard - 2);
-        //    }
-        //}
-        private static Random random = new Random();
-        private System.Windows.Forms.Timer timer1;
-        private int counter = 0;
         private void btnStart_Click_1()
         {
             timer1 = new System.Windows.Forms.Timer();
@@ -232,27 +122,51 @@ namespace KeyboardChampion.ViewModel
             Time = counter.ToString();
         }
 
-        public void GenerateLines()
+        public bool GenerateLines(IStrategyToGenerateLines strategy)
         {
-            var mode = new SetGenerateMode();
-            if (mode.SetStrategyChooseLetters(new GenerateRandomLines(), toGenerateString))
-            {
-                var lines = mode.GetLines();
-                
-                    FirstLine = lines[0];
-                    SecondLine = lines[1];
-                    ThirdLine = lines[2];
-                FirstLineFromKey = generateSpace();
-                SecondLineFromKey = generateSpace();
-                ThirdLineFromKey = generateSpace();
-            } 
+            var lines = strategy.GenerateLines(ToGenerateString);
+            if (lines.Count == 0) return false;
+            getLine(lines);
+            return true; 
         }
+        private void getLine(List<string> lines)
+        {
+            FirstLine = lines[0];
+            SecondLine = lines[1];
+            ThirdLine = lines[2];
+;
+            allText = FirstLine + SecondLine + ThirdLine;
+        }
+        Task task; 
+        public void StartTimer()
+        {
+            task = new Task(() => {
+                 btnStart_Click_1();
+               
+            });
+            task.RunSynchronously();
+        }
+
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             counter++;
             Time = counter.ToString();
         }
+
+        public bool ChoseFile()
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Text files (*.txt)|*.txt";
+            if (openFileDialog.ShowDialog() == true)
+            {
+                PathToFile = openFileDialog.FileName; 
+                ToGenerateString = File.ReadAllText(openFileDialog.FileName);
+                return true;
+            }
+            return false;
+        }
+
         private string generateSpace()
         {
             const string chars = " ";
@@ -260,14 +174,16 @@ namespace KeyboardChampion.ViewModel
               .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
-        public MyViewModel()
+        private MyViewModel()
         {
             textToPractice = new TextToPractice()
             {
-
+                FirstLine = generateSpace(),
+                SecondLine = generateSpace(),
+                ThirdLine = generateSpace(),
                 FirstLineFromKey = generateSpace(),
                 SecondLineFromKey = generateSpace(),
-                ThirdLineFromKey = generateSpace(),
+                ThirdLineFromKey = generateSpace()
             };
             statistics = new Statistics()
             {
@@ -275,9 +191,11 @@ namespace KeyboardChampion.ViewModel
                 Letters = 0.ToString(),
                 Time = 0.ToString()
             };
+            Visible = true;
+            ToGenerateString = " "; 
             allText = FirstLine + SecondLine + ThirdLine;
-            Task task = new Task(() => btnStart_Click_1());
-            task.RunSynchronously(); 
+          
+
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

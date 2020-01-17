@@ -9,6 +9,10 @@ namespace KeyboardChampion.Utils
 {
     public class GenerateRandomLines : IStrategyToGenerateLines
     {
+        public GenerateRandomLines()
+        {
+
+        }
         Random random = new Random(); 
         public List<string> GenerateLines(string input)
         {

@@ -8,7 +8,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
-    <Grid KeyDown="Grid_KeyDown" >
+    <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="*"/>
@@ -17,31 +17,31 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Rectangle Grid.Row="0" Fill="#cbcbcb" />
+        <Rectangle Grid.Row="0" Fill="LightGray" />
         <Rectangle Grid.Row="1" Fill="White" />
-        <Rectangle Grid.Row="2" Fill="#cbcbcb" />
+        <Rectangle Grid.Row="2" Fill="LightGray" />
         <Rectangle Grid.Row="3" Fill="White" />
-        <Rectangle Grid.Row="4" Fill="#cbcbcb" />
+        <Rectangle Grid.Row="4" Fill="LightGray" />
         <Rectangle Grid.Row="5" Fill="White" />
         
         <Viewbox  HorizontalAlignment="Left"  Grid.Row="0" VerticalAlignment="Center" >
-            <TextBlock  x:Name="LineOneText" Background="LightGray" Grid.Column="0" Margin="10 0 10 0" Text="{Binding FirstLine, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+            <TextBlock  x:Name="LineOneText" Background="LightGray" Grid.Column="0"  Text="{Binding FirstLine, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
         </Viewbox>
 
         <Viewbox x:Name="LineOneIn"  HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Center">
-            <TextBlock Background="White" Margin="10 0 10 0" Text="{Binding FirstLineFromKey, UpdateSourceTrigger=PropertyChanged}" ></TextBlock>
+            <TextBlock Background="White"  Text="{Binding FirstLineFromKey, UpdateSourceTrigger=PropertyChanged}" ></TextBlock>
         </Viewbox>
         <Viewbox HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Center">
-            <TextBlock  Margin="10 0 10 0" FontSize="14" Text="{Binding SecondLine, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+            <TextBlock FontSize="14" Text="{Binding SecondLine, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
         </Viewbox>
         <Viewbox x:Name="LineTwoIn" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Center">
-            <TextBlock Background="White" Margin="10 0 10 0" Text="{Binding SecondLineFromKey, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+            <TextBlock Background="White" Text="{Binding SecondLineFromKey, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
         </Viewbox>
         <Viewbox HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Center">
-            <TextBlock Background="LightGray" Margin="10 0 10 0" Text="{Binding ThirdLine, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+            <TextBlock Background="LightGray" Text="{Binding ThirdLine, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
         </Viewbox>
         <Viewbox  HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Center">
-            <TextBlock x:Name="LineThirdIn" Background="White" Margin="10 0 10 0"  Text="{Binding ThirdLineFromKey, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+            <TextBlock x:Name="LineThirdIn" Background="White"  Text="{Binding ThirdLineFromKey, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
         </Viewbox>
     </Grid>
        

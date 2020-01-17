@@ -5,8 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:KeyboardChampion.Controls"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+             d:DesignHeight="450" d:DesignWidth="800" IsEnabled="{Binding Visible, UpdateSourceTrigger=PropertyChanged}">
+    <Grid Background="LightGray">
         
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
@@ -14,13 +14,37 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="RandomLines" Grid.Row="0" Click="RandomLines_Click">
-            Random Lines 
+        
+            <Button BorderBrush="White" Background="White" x:Name="RandomLines" Grid.Row="0" Click="RandomLines_Click">
+            <Viewbox>
+
+                <TextBlock> Random </TextBlock>
+            </Viewbox>
+        </Button>
+      
+       
+            <Button BorderBrush="White" Background="LightGray" x:Name="LinesFromFile" Grid.Row="1" Click="File_Button_Click">
+            <Viewbox>
+
+                <TextBlock> File </TextBlock>
+            </Viewbox>
+        </Button>
+       
+       
+            <Button BorderBrush="White" Background="White" x:Name="StartButton" Grid.Row="2" Click="StartButton_Click">
+            <Viewbox>
+
+                <TextBlock> Start </TextBlock>
+            </Viewbox>
         </Button>
 
-        <Button x:Name="StartButton" Grid.Row="2" Click="StartButton_Click">
-            Start
+
+        <Button BorderBrush="White" Background="LightGray" x:Name="StatButton" Grid.Row="3" Click="StatButton_Click">
+            <Viewbox>
+                <TextBlock> Statiscs </TextBlock></Viewbox>
+            
         </Button>
+      
 
     </Grid>
 
