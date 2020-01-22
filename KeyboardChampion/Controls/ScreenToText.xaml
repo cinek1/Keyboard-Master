@@ -24,12 +24,12 @@
         <Rectangle Grid.Row="4" Fill="LightGray" />
         <Rectangle Grid.Row="5" Fill="White" />
         
-        <Viewbox  HorizontalAlignment="Left"  Grid.Row="0" VerticalAlignment="Center" >
-            <TextBlock  x:Name="LineOneText" Background="LightGray" Grid.Column="0"  Text="{Binding FirstLine, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+        <Viewbox  HorizontalAlignment="Left"  Grid.Row="0" VerticalAlignment="Center"  >
+            <TextBlock  x:Name="LineOneText" Background="LightGray" Grid.Column="0"  Text="{Binding FirstLine, UpdateSourceTrigger=PropertyChanged}" FontFamily="consolas"></TextBlock>
         </Viewbox>
 
         <Viewbox x:Name="LineOneIn"  HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Center">
-            <TextBlock Background="White"  Text="{Binding FirstLineFromKey, UpdateSourceTrigger=PropertyChanged}" ></TextBlock>
+            <TextBlock Background="White"  Text="{Binding FirstLineFromKey, UpdateSourceTrigger=PropertyChanged}" FontFamily="consolas"></TextBlock>
         </Viewbox>
         <Viewbox HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Center">
             <TextBlock FontSize="14" Text="{Binding SecondLine, UpdateSourceTrigger=PropertyChanged}"></TextBlock>

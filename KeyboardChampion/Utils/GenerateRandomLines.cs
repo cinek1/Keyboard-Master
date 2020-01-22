@@ -27,7 +27,7 @@ namespace KeyboardChampion.Utils
         {
             string chars = letters;
             return new string(Enumerable.Repeat(chars, 80)
-              .Select(s => s[random.Next(s.Length)]).ToArray());
+              .Select(s => s[random.Next(s.Length)]).ToArray()).ToUpper();
         }
         private string generateSpace()
         {

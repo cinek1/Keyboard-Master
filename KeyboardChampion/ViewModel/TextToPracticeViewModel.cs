@@ -22,8 +22,8 @@ namespace KeyboardChampion.ViewModel
         public SetGenerateMode GenerateMode { set; get;  }
 
         private int countLettersFromKeyboard = 0;
-        private string allText; 
-
+        private string allText;
+        private Task task;
         private int mistake;
         private static Random random = new Random();
         private System.Windows.Forms.Timer timer1;
@@ -61,7 +61,7 @@ namespace KeyboardChampion.ViewModel
                 StringBuilder buildToLine = new StringBuilder(FirstLineFromKey);
                 buildToLine[countLettersFromKeyboard] = char.Parse(letter);
                 countLettersFromKeyboard++;
-                 buildToLine.Remove(buildToLine.Length - 1, 1);
+              //   buildToLine.Remove(buildToLine.Length - 1, 1);
                 FirstLineFromKey = buildToLine.ToString();
               
             }
@@ -70,7 +70,7 @@ namespace KeyboardChampion.ViewModel
                 StringBuilder buildToLine = new StringBuilder(SecondLineFromKey);
                 buildToLine[countLettersFromKeyboard % 80] = char.Parse(letter);
                 countLettersFromKeyboard++;
-                buildToLine.Remove(buildToLine.Length - 1, 1);
+              //  buildToLine.Remove(buildToLine.Length - 1, 1);
                 SecondLineFromKey = buildToLine.ToString();
             }
             else
@@ -78,7 +78,7 @@ namespace KeyboardChampion.ViewModel
                 StringBuilder buildToLine = new StringBuilder(ThirdLineFromKey);
                 buildToLine[countLettersFromKeyboard % 80] = char.Parse(letter);
                 countLettersFromKeyboard++;
-                buildToLine.Remove(buildToLine.Length - 1, 1);
+              //  buildToLine.Remove(buildToLine.Length - 1, 1);
                 ThirdLineFromKey = buildToLine.ToString();
             }
             Letters = countLettersFromKeyboard.ToString();
@@ -137,7 +137,7 @@ namespace KeyboardChampion.ViewModel
 ;
             allText = FirstLine + SecondLine + ThirdLine;
         }
-        Task task; 
+
         public void StartTimer()
         {
             task = new Task(() => {
@@ -170,7 +170,7 @@ namespace KeyboardChampion.ViewModel
         private string generateSpace()
         {
             const string chars = " ";
-            return new string(Enumerable.Repeat(chars, 160)
+            return new string(Enumerable.Repeat(chars, 80)
               .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 

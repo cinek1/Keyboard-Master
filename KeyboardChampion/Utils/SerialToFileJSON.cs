@@ -11,7 +11,7 @@ namespace KeyboardChampion.Utils
 {
     class SerialToFileJSON : ISafeData
     {
-        private string path = "seriaflModel.json"; 
+        private string path = "lll.json";
         public List<DataToSerialaize> GetData()
         {
             if (!System.IO.File.Exists(path))

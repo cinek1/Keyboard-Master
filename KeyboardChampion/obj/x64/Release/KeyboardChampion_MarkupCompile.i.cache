@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Studia\Keyboard-Master-a99376e3068b1645e6e357fbded3747184f157ba\KeyboardChampion\obj\x64\Release\
+D:\Studia\C#-Projekt\Keyboard-Master\KeyboardChampion\obj\x64\Release\
 KeyboardChampion
 none
 false
 TRACE
-D:\Studia\Keyboard-Master-a99376e3068b1645e6e357fbded3747184f157ba\KeyboardChampion\App.xaml
-61309123054
+D:\Studia\C#-Projekt\Keyboard-Master\KeyboardChampion\App.xaml
+7-201665776
+4-188959477
+25-1223511712
+181011432383
+Controls\Keyboard.xaml;Controls\KeyShape.xaml;Controls\MenuPartPractice.xaml;Controls\ScreenToText.xaml;Controls\Statictics.xaml;Controls\UserMenu.xaml;MainWindow.xaml;
 
-191629835306
-16-280627694
-Controls\Keyboard.xaml;Controls\KeyShape.xaml;Controls\MenuPartPractice.xaml;Controls\ScreenToText.xaml;Controls\UserMenu.xaml;MainWindow.xaml;
-
-True
+False
 

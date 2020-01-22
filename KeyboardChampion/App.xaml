@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:KeyboardChampion"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="TextBlock">
+            <Setter Value="consolas" Property="FontFamily"></Setter>
+        </Style>
     </Application.Resources>
 </Application>

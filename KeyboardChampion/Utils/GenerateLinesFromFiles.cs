@@ -14,18 +14,19 @@ namespace KeyboardChampion.Utils
             List<string> lines = new List<string>(); 
             input = removeAnotherChar(input);
             input = input.ToUpper(); 
-            for (int i = 0; i < 240; i += 80)
+            for (int i = 0; i < input.Length; i += 80)
             {
                 if (i + 80 > input.Length) lines.Add(input.Substring(i, input.Length - i));
-                lines.Add(input.Substring(i, 80)); 
+                else lines.Add(input.Substring(i, 80)); 
             }
+            
             return lines; 
         }
 
         private string removeAnotherChar(string input)
         {
             return new string((from c in input
-                               where char.IsWhiteSpace(c) || char.IsLetterOrDigit(c)
+                               where char.IsWhiteSpace(c) || char.IsLetter(c)
                                select c
         ).ToArray());
         }
