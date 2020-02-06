@@ -37,3 +37,42 @@ D:\Studia\C#-Projekt\Keyboard-Master\KeyboardChampion\obj\x64\Debug\KeyboardCham
 D:\Studia\C#-Projekt\Keyboard-Master\KeyboardChampion\obj\x64\Debug\KeyboardChampion.pdb
 D:\Studia\C#-Projekt\Keyboard-Master\KeyboardChampion\obj\x64\Debug\KeyboardChampion.csprojAssemblyReference.cache
 D:\Studia\C#-Projekt\Keyboard-Master\KeyboardChampion\obj\x64\Debug\App.baml
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\bin\x64\Debug\NUnit3.TestAdapter.dll
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\bin\x64\Debug\NUnit3.TestAdapter.pdb
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\bin\x64\Debug\nunit.engine.dll
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\bin\x64\Debug\nunit.engine.api.dll
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\bin\x64\Debug\KeyboardChampion.exe.config
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\bin\x64\Debug\KeyboardChampion.exe
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\bin\x64\Debug\KeyboardChampion.pdb
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\bin\x64\Debug\Newtonsoft.Json.dll
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\bin\x64\Debug\nunit.framework.dll
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\bin\x64\Debug\Newtonsoft.Json.xml
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\bin\x64\Debug\nunit.framework.pdb
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\bin\x64\Debug\nunit.framework.xml
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\obj\x64\Debug\KeyboardChampion.csprojAssemblyReference.cache
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\obj\x64\Debug\Controls\Keyboard.g.cs
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\obj\x64\Debug\Controls\KeyShape.g.cs
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\obj\x64\Debug\Controls\MenuPartPractice.g.cs
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\obj\x64\Debug\Controls\ScreenToText.g.cs
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\obj\x64\Debug\Controls\Statictics.g.cs
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\obj\x64\Debug\Controls\UserMenu.g.cs
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\obj\x64\Debug\MainWindow.g.cs
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\obj\x64\Debug\App.g.cs
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\obj\x64\Debug\KeyboardChampion_Content.g.cs
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\obj\x64\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\obj\x64\Debug\KeyboardChampion_MarkupCompile.cache
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\obj\x64\Debug\KeyboardChampion_MarkupCompile.lref
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\obj\x64\Debug\App.baml
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\obj\x64\Debug\Controls\Keyboard.baml
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\obj\x64\Debug\Controls\KeyShape.baml
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\obj\x64\Debug\Controls\MenuPartPractice.baml
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\obj\x64\Debug\Controls\ScreenToText.baml
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\obj\x64\Debug\Controls\Statictics.baml
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\obj\x64\Debug\Controls\UserMenu.baml
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\obj\x64\Debug\MainWindow.baml
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\obj\x64\Debug\KeyboardChampion.g.resources
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\obj\x64\Debug\KeyboardChampion.Properties.Resources.resources
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\obj\x64\Debug\KeyboardChampion.csproj.GenerateResource.cache
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\obj\x64\Debug\KeyboardChampion.csproj.CopyComplete
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\obj\x64\Debug\KeyboardChampion.exe
+C:\Users\Marcin\Downloads\Keyboard-Master (1)\Keyboard-Master\KeyboardChampion\obj\x64\Debug\KeyboardChampion.pdb

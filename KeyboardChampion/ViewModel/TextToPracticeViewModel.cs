@@ -132,9 +132,10 @@ namespace KeyboardChampion.ViewModel
         private void getLine(List<string> lines)
         {
             FirstLine = lines[0];
-            SecondLine = lines[1];
-            ThirdLine = lines[2];
-;
+            if (lines.Count > 1 ) SecondLine = lines[1];
+            if (lines.Count > 2) ThirdLine = lines[2];
+
+            ;
             allText = FirstLine + SecondLine + ThirdLine;
         }
 
